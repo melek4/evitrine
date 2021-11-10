@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des utilisateurs
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<h1>Liste des utilisateurs</h1>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Prenom</th>
+				<th>Nom</th>
+				<th>Email</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<td>{{user.Prenom}}</td>
+					<td>{{user.Nom}}</td>
+					<td>{{user.email}}</td>
+					<td>
+						<a href="{{path('detail2',{'id':user.id})}}" class="btn btn-primary">detail</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+
+
+	</table>
+{% endblock %}

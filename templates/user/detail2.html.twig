@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details de l'utilisateur
+{% endblock %}
+
+{% block body %}
+
+
+	<h1>Details de l'utilisateur</h1>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Prenom</th>
+				<th>Nom</th>
+				<th>Email</th>
+
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<td>{{user.Prenom}}</td>
+				<td>{{user.Nom}}</td>
+				<td>{{user.email}}</td>
+
+			</tr>
+
+
+		</tbody>
+	</table>
+
+	<a href="{{path('delete2',{'id':user.id})}}" class="btn btn-danger">Supprimer</button>
+
+
+{% endblock %}
